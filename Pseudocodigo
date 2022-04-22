@@ -1,0 +1,67 @@
+class Main {
+
+    public static void main(String[] args) {
+
+        Prenda prenda;
+        //Creo un objeto Prenda Aleatorio
+        prenda = new Prenda(
+                Prenda.TipoDePrenda.BUZO,
+                Prenda.Categoria.ABRIGO,
+                Prenda.Material.LANA,
+                Prenda.ColorPrincipal.AZUL,
+                "Violeta");
+    }
+}
+class Prenda{
+
+    TipoDePrenda tipoDePrenda;
+    Categoria categoria;
+    Material material;
+    ColorPrincipal colorPrincipal;
+    String colorSecundario;
+
+    Prenda(TipoDePrenda tipoDePrenda,Categoria categoria,
+           Material material, ColorPrincipal colorPrincipal,
+           String colorSecundario) {
+
+        Validator(tipoDePrenda,categoria);
+
+        this.tipoDePrenda = tipoDePrenda;
+        this.categoria = categoria;
+        this.material = material;
+        this.colorPrincipal = colorPrincipal;
+        this.colorSecundario = colorSecundario;
+    }
+
+    public void Validator(TipoDePrenda tipoDePrenda, Categoria categoria){
+        System.out.println(tipoDePrenda);
+        if (tipoDePrenda == TipoDePrenda.ZAPATILLA && categoria != Categoria.CALZADO){
+            System.out.println("No combina la prenda con la categoria");
+            throw new ArithmeticException();
+        }
+
+        if (tipoDePrenda == TipoDePrenda.BUZO && categoria != Categoria.ABRIGO){
+            System.out.println("No combina la prenda con la categoria");
+            throw new ArithmeticException();
+        }
+
+        if (tipoDePrenda == TipoDePrenda.SHORT && categoria != Categoria.PANTALON){
+            System.out.println("No combina la prenda con la categoria");
+            throw new ArithmeticException();
+        }
+    }
+    
+    public enum TipoDePrenda{
+        ZAPATILLA,SHORT, BUZO
+    }
+    public enum Categoria{
+        PANTALON,CALZADO,ABRIGO
+    }
+    public enum ColorPrincipal{
+        ROJO,AZUL,VERDE
+    }
+    public enum Material{
+        TELA,METAL,LANA
+    }
+}
+
