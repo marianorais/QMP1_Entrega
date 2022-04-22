@@ -51,16 +51,16 @@ class Prenda{
         }
     }
     
-    public enum TipoDePrenda{
+     enum TipoDePrenda{
         ZAPATILLA,SHORT, BUZO
     }
-    public enum Categoria{
+     enum Categoria{
         PANTALON,CALZADO,ABRIGO
     }
-    public enum ColorPrincipal{
+     enum ColorPrincipal{
         ROJO,AZUL,VERDE
     }
-    public enum Material{
+     enum Material{
         TELA,METAL,LANA
     }
 }
